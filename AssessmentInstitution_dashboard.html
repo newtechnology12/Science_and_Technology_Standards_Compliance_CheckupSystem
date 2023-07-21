@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Science and Technology Standards Compliance Checkup System</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Free HTML Templates" name="keywords">
+  <meta content="Free HTML Templates" name="description">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Template Stylesheet -->
+    <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Custom styles for the services container */
+    .service-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Custom styles for the services */
+    .service-item {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    .service-item:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Custom styles for the icon container */
+    .icon-container {
+      font-size: 2rem;
+      color: #007bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: #f8f9fa;
+      margin: 0 auto 15px;
+    }
+
+    /* Custom styles for the title */
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Custom styles for the description */
+    .service-description {
+      font-size: 1rem;
+      color: #777;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Main container */
+    .dashboard-container {
+      display: flex;
+      min-height: 100vh;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Left sidebar */
+    .sidebar {
+      flex: 0 0 300px;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    /* Sidebar heading */
+    .sidebar h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    /* Form container */
+    .form-container {
+      margin-top: 20px;
+      background-color: #f0f8ff; /* Light Blue background color */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .form-container label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Custom styles for the project title */
+    .project-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+      /* Footer styles */
+      .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            /* Changed from 'absolute' to 'fixed' */
+            left: 0;
+            bottom: 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 aut;
+
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links li a:hover {
+            text-decoration: underline;
+        }
+  </style>
+</head>
+
+<body>
+  <h1 class="project-title">EduTech Compliance Hub</h1>
+  <hr>
+   <!-- Dashboard Start -->
+   <div class="dashboard-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      <h3>Dashboard</h3>
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user"></i> Profile</a>
+      <a href="#"><i class="fas fa-cog"></i> Settings</a>
+      <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+      <button class="dashboard-button">Create New</button>
+
+      <!-- Example Form -->
+      <div class="form-container">
+        <form class="dashboard-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <!-- Services Start -->
+        <div class="container-fluid py-5">
+          <div class="service-container">
+            <div class="row g-5">
+
+            <!-- Services Start -->
+            <div class="container-fluid py-5">
+              <div class="service-container">
+                <div class="row g-5">
+
+                  <!-- Service 1 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="AssessmentInstitution.html">
+                        <div class="icon-container">
+                          <i class="fas fa-book-open"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">MinEduc Assessment Service</h4>
+                      <p class="service-description">Create an assessment form in collaboration with the Ministry of
+                        Education.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Service 2 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="contact.html">
+                        <div class="icon-container">
+                          <i class="fas fa-user-edit"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">Information Update Service</h4>
+                      <p class="service-description">Update your personal information using the form below.</p>
+                    </div>
+                  </div>
+
+                  <!-- Service 3 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="register School.html">
+                        <div class="icon-container">
+                          <i class="fas fa-school"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">Register your school</h4>
+                      <p class="service-description">Fill out the form below to register your school.</p>
+                    </div>
+                  </div>
+
+                  <!-- Service 4 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="tracking.html">
+                        <div class="icon-container">
+                          <i class="fas fa-clipboard-check"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">Tracking Service</h4>
+                      <p class="service-description">Track the progress of your application.</p>
+                    </div>
+                  </div>
+
+                  <!-- Service 5 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="register.html">
+                        <div class="icon-container">
+                          <i class="fas fa-user-plus"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">Create Account</h4>
+                      <p class="service-description">Use the form below to create your account.</p>
+                    </div>
+                  </div>
+
+                  <!-- Service 6 -->
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center">
+                      <a href="register.html">
+                        <div class="icon-container">
+                          <i class="fas fa-user-plus"></i>
+                        </div>
+                      </a>
+                      <h4 class="service-title">Create Account</h4>
+                      <p class="service-description">Use the form below to create your account.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Services End -->
+
+          </div>
+        </div>
+        <!-- Dashboard End -->
+</body>
+
+
+<!-- Services End -->
+
+
+
+<!-- Back to Top -->
+<!-- <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+    class="bi bi-arrow-up"></i></a>
+ -->
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // JavaScript to toggle form visibility
+  $(document).ready(function () {
+    $('.service-link').click(function (e) {
+      e.preventDefault();
+      $(this).siblings('.form-container').slideToggle();
+    });
+  });
+</script>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <p>&copy; 2023 Your Company. All rights reserved.</p>
+      <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+      </ul>
+  </div>
+</footer>
+</body>
+
+
+
+</html>

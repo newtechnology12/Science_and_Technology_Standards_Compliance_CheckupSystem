@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Science and Technology Standards Compliance Checkup System</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fc;
+    }
+
+    .container {
+      margin-top: 80px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 40px;
+    }
+
+    .h4 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-control-user {
+      border-radius: 30px;
+      padding: 15px;
+      background-color: #f3f4f7;
+      border: none;
+      color: #000;
+    }
+
+    .btn-user {
+      border-radius: 30px;
+      padding: 15px;
+      font-weight: bold;
+      background-color: #4e73df;
+      border-color: #4e73df;
+    }
+
+    .btn-user:hover {
+      background-color: #2e59d9;
+      border-color: #2e59d9;
+    }
+
+    .btn-google {
+      background-color: #ea4335;
+      border-color: #ea4335;
+      color: #fff;
+    }
+
+    .btn-facebook {
+      background-color: #3b5998;
+      border-color: #3b5998;
+      color: #fff;
+    }
+
+    .small {
+      font-size: 14px;
+    }
+
+    .text-center a {
+      color: #6c757d;
+      text-decoration: none;
+    }
+
+    .text-center a:hover {
+      color: #000;
+    }
+
+    .col-lg-6 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .login-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .row {
+      background-image: url('img/book3.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* .user{
+    background-color: #727c8c;
+  } */
+  </style>
+
+</head>
+
+<body class="">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Register an School!</h1>
+              </div>
+              <hr>
+              <form class="user" id="myForm">
+                <div id="section1">
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="userid" placeholder="User Id">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="schoolId"
+                        placeholder="your schoolId">
+                    </div>
+
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="schoolname"
+                        placeholder="your School Name">
+                    </div>
+
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="legal_name" placeholder="legal_name">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="contact_person_name"
+                        placeholder="contact_person_name">
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="contact_person_designation"
+                        placeholder="contact_person_designation">
+                    </div>
+
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="location" placeholder="location">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="telephone_number"
+                        placeholder="Telephone_number">
+                    </div>
+
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="fax_number"
+                        placeholder="fax_number">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="email" class="form-control form-control-user" id="EmailAddress"
+                        placeholder="Email Address">
+                    </div>
+
+                  </div>
+                  <a href="#" id="next1" class="btn btn-primary btn-user btn-block">Next</a>
+                  <hr>
+                </div>
+
+                <div id="section2" style="display: none;">
+
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="url" class="form-control form-control-user" id="website" placeholder="website URL">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="legal_status"
+                        placeholder="legal_status">
+                    </div>
+
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="company_registration_number"
+                        placeholder="TIN NUMBER">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="OwerName" placeholder="Ower Name: GOV/PRIV">
+                    </div>
+
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="ceo_name" placeholder="Master Name">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" id="ceo_telephoner"
+                        placeholder="Master Phone Number">
+                    </div>
+
+                  </div>
+
+
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="ceo_fax_number"
+                      placeholder="Master Fax_number">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-user" id="CeoEmail" placeholder="Head Master Email">
+                  </div>
+                  <button type="submit" id="loginButton" class="btn btn-primary btn-user btn-block">
+                    Register School
+                  </button>
+                  <hr>
+                </div>
+
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="login.html">Already have an account? Login!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+      class="bi bi-arrow-up"></i></a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+
+      
+    let schoolIdInput;
+    // Function to generate a random number with a specific length
+    function generateRandomNumber(length) {
+      return Math.floor(Math.random() * Math.pow(10, length));
+    }
+
+    // Function to generate a random school ID in the format S-34567
+    function generateSchoolId() {
+      const prefix = 'S-';
+      const randomNumber = generateRandomNumber(5); // Generate a 5-digit random number
+      return prefix + randomNumber.toString().padStart(5, '0');
+    }
+
+
+    // Get references to the form sections
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+
+    // Get references to the next buttons
+    const next1Button = document.getElementById('next1');
+
+    // Get references to the input fields
+ 
+    // Add click event listener to the next buttons
+    next1Button.addEventListener('click', function (e) {
+      e.preventDefault();
+      section1.style.display = 'none';
+      section2.style.display = 'block';
+    });
+
+    // Add event listener to generate school ID and populate the input field
+    document.addEventListener('DOMContentLoaded', function () {
+    schoolIdInput = document.getElementById('schoolId');
+    schoolIdInput.addEventListener('focus', function () {
+      if (schoolIdInput.value === '') {
+        schoolIdInput.value = generateSchoolId();
+      }
+    });
+  });
+  </script>
+
+
+  <script>
+
+    async function fetchUserData() {
+      // Add event listener to the userid input field
+      const userIdInput = document.getElementById('userid');
+      userIdInput.addEventListener('blur', fetchUserData);
+
+      var schoolId = document.getElementById('schoolId').value;
+      console.log('schoolId'+schoolId)
+      var schoolname = document.getElementById('schoolname').value;
+      var legal_name = document.getElementById('legal_name').value;
+      var contact_person_name = document.getElementById('contact_person_name').value;
+      var contact_person_designation = document.getElementById('contact_person_designation').value;
+      var location = document.getElementById('location').value;
+      var telephone_number = document.getElementById('telephone_number').value;
+
+      var fax_number = document.getElementById('fax_number').value;
+      var EmailAddress = document.getElementById('EmailAddress').value;
+      var website = document.getElementById('website').value;
+      var legal_status = document.getElementById('legal_status').value;
+
+      var TIN = document.getElementById('company_registration_number').value;
+      var OwerName = document.getElementById('OwerName').value;
+      var ceo_name = document.getElementById('ceo_name').value;
+      var ceo_telephone_number = document.getElementById('ceo_telephoner').value;
+
+      var ceo_fax_number = document.getElementById('ceo_fax_number').value;
+      var ceo_email = document.getElementById('CeoEmail').value;
+
+      // District
+      var Userdata = await fetch('http://127.0.0.1:8000/users/');
+      var userresult = await Userdata.json();
+      var matchFound = false;
+      for (var i = 0; i < userresult.length; i++) {
+        
+        if (userresult[i].userId == userIdInput.value) {
+          var location = document.getElementById('location').value = userresult[i].district;
+          var contact_person_designation = document.getElementById('contact_person_designation').value = userresult[i].role;
+          var schoolname = document.getElementById('schoolname').value = userresult[i].user;
+          console.log('location: ' + location)
+          console.log('userId: ' + userIdInput.value)
+
+          matchFound = true;
+          break;
+
+        }
+        if (!matchFound) {
+        console.log('No match found for user ID: ' + userIdInput);
+      }
+      }
+    }
+
+    async function submitData(event) {
+
+      event.preventDefault(); // prevent the form from submitting normally
+      
+      const userIdInput = document.getElementById('userid').value;
+      console.log('userrrr: '+userIdInput)
+      var schoolname = document.getElementById('schoolname').value;
+      var legal_name = document.getElementById('legal_name').value;
+      var contact_person_name = document.getElementById('contact_person_name').value;
+      var contact_person_designation = document.getElementById('contact_person_designation').value;
+      var location = document.getElementById('location').value;
+      var telephone_number = document.getElementById('telephone_number').value;
+
+      var fax_number = document.getElementById('fax_number').value;
+      var EmailAddress = document.getElementById('EmailAddress').value;
+      var website = document.getElementById('website').value;
+      var legal_status = document.getElementById('legal_status').value;
+
+      var TIN = document.getElementById('company_registration_number').value;
+      var OwerName = document.getElementById('OwerName').value;
+      var ceo_name = document.getElementById('ceo_name').value;
+      var ceo_telephone_number = document.getElementById('ceo_telephoner').value;
+
+      var ceo_fax_number = document.getElementById('ceo_fax_number').value;
+      var ceo_email = document.getElementById('CeoEmail').value;
+     
+
+      try {
+        const response = await fetch('http://127.0.0.1:8000/school-others/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+
+          },
+          body: JSON.stringify({
+            schoolId: schoolIdInput.value,
+            schoolname: schoolname,
+            userId: userIdInput,
+            legal_name: legal_name,
+            contact_person_name: contact_person_name,
+            contact_person_designation: contact_person_designation,
+            location: location,
+            telephone_number: telephone_number,
+            fax_number: fax_number,
+            email: EmailAddress,
+            website: website,
+            legal_status: legal_status,
+            company_registration_number: TIN,
+            owner_details: OwerName,
+            ceo_name: ceo_name,
+            ceo_telephone_number: ceo_telephone_number,
+            ceo_fax_number: ceo_fax_number,
+            ceo_email: ceo_email
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+      } catch (e) {
+        console.log(`An error occurred: ${e}`);
+      }
+    }
+
+    // Call fetchUserData function when DOM content has loaded
+    document.addEventListener('DOMContentLoaded', async () => {
+      var form = document.getElementById('myForm');
+      form.addEventListener('submit', submitData);
+    });
+    document.addEventListener('DOMContentLoaded', fetchUserData);
+
+
+  </script>
+
+</body>
+
+</html>

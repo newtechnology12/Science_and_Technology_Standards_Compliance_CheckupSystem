@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Science and Technology Standards Compliance Checkup System</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    hr {
+      border-color: #333;
+    }
+
+    .form {
+      max-width: 800px;
+      margin: 20px auto;
+      /* Added margin for better positioning */
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      /* Adjusted width to occupy 90% of the available screen space */
+    }
+
+    /* Center the form horizontally */
+    @media (max-width: 992px) {
+      .form {
+        width: 100%;
+        /* Make the form occupy the full width on smaller screens */
+      }
+    }
+
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      color: #333;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    button[type="submit"]:focus {
+      outline: none;
+    }
+
+    /* Main container */
+    .dashboard-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Left sidebar */
+    .sidebar {
+      flex: 0 0 300px;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    /* Sidebar heading */
+    .sidebar h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    /* Form container */
+    .form-container {
+      margin-top: 20px;
+      background-color: #f0f8ff;
+      /* Light Blue background color */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .form-container label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: 100%;
+      /* Make the button occupy the full width of its container */
+      text-align: center;
+      /* Center the button text */
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Custom styles for the project title */
+    .project-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .back-to-top:hover {
+      background-color: #0056b3;
+    }
+
+     /* Your existing styles here */
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            /* Changed from 'absolute' to 'fixed' */
+            left: 0;
+            bottom: 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 aut;
+
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links li a:hover {
+            text-decoration: underline;
+        }
+
+  </style>
+
+
+</head>
+
+<body class="">
+
+  <h1 class="project-title">Assessment Institution Form</h1>
+
+  <!-- Dashboard Start -->
+  <div class="dashboard-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      <h3>Dashboard</h3>
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-user"></i> Profile</a>
+      <a href="#"><i class="fas fa-cog"></i> Settings</a>
+      <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+      <button class="dashboard-button">Create New</button>
+
+      <!-- Example Form -->
+      <div class="form-container">
+        <form class="dashboard-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <form id="assessmentForm" class="form">
+      <!-- Existing form fields -->
+      <div id="section1">
+        <div class="form-group">
+          <label for="sizeOfLand">Institution Id</label>
+          <input type="text" id="sizeOfLand" placeholder="Enter Institution ID" required>
+        </div>
+
+        <div class="form-group">
+          <label for="sizeOfLand">Size of Land Owned</label>
+          <input type="text" id="sizeOfLand" placeholder="Enter size of land owned" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="classrooms">Classrooms Number and Size</label>
+          <input type="text" id="classrooms" placeholder="Enter classrooms number and size" required>
+        </div>
+
+        <div class="form-group">
+          <label for="library">Library Number and Size</label>
+          <input type="text" id="library" placeholder="Enter library number and size" required>
+        </div>
+
+        <div class="form-group">
+          <label for="computerLabs">Computer Laboratories Number and Size</label>
+          <input type="text" id="computerLabs" placeholder="Enter computer labs number and size" required>
+        </div>
+
+        <div class="form-group">
+          <label for="landTitle">Attach a Copy of the Land Title</label>
+          <input type="file" id="landTitle" required>
+        </div>
+
+        <div class="form-group">
+          <label for="administrationBloc">Administration Bloc</label>
+          <input type="text" id="administrationBloc" placeholder="Enter administration bloc" required>
+        </div>
+
+        <div class="form-group">
+          <label for="adminOffices">Offices for Administration Staff</label>
+          <input type="text" id="adminOffices" placeholder="Enter offices for administration staff" required>
+        </div>
+
+        <div class="form-group">
+          <label for="academicOffices">Offices for Academic Staff</label>
+          <input type="text" id="academicOffices" placeholder="Enter offices for academic staff" required>
+        </div>
+        <a href="#" id="next1" class="btn btn-primary btn-user btn-block">Next</a>
+        <hr>
+      </div>
+
+
+      <div id="section2" style="display: none;">
+        <div class="form-group">
+          <label for="studentWelfareOffices">Student Welfare Offices</label>
+          <input type="text" id="studentWelfareOffices" placeholder="Enter student welfare offices" required>
+        </div>
+
+        <div class="form-group">
+          <label for="healthClinic">Health Clinic Area</label>
+          <input type="text" id="healthClinic" placeholder="Enter health clinic area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="studentCanteen">Student Canteen</label>
+          <input type="text" id="studentCanteen" placeholder="Enter student canteen" required>
+        </div>
+
+        <div class="form-group">
+          <label for="studentHostels">Student Hostels</label>
+          <input type="text" id="studentHostels" placeholder="Enter student hostels" required>
+        </div>
+
+        <div class="form-group">
+          <label for="maleStudentArea">Number Total Area in Square Metres and Number of Bed Spaces (Male
+            Students)</label>
+          <input type="text" id="maleStudentArea" placeholder="Enter number and size of male student area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="femaleStudentArea">Number Total Area in Square Metres and Number of Bed Spaces (Female
+            Students)</label>
+          <input type="text" id="femaleStudentArea" placeholder="Enter number and size of female student area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="masterPlan">Provide a Master Plan of Your Campus</label>
+          <input type="file" id="masterPlan" required>
+        </div>
+
+        <div class="form-group">
+          <label for="institutionVehicles">Vehicles Institution Own/Has</label>
+          <input type="text" id="institutionVehicles" placeholder="Enter vehicles owned by the institution" required>
+        </div>
+
+        <div class="form-group">
+          <label for="libraryBooks">Upload Library Books by Subject</label>
+          <input type="file" id="libraryBooks" required>
+        </div>
+
+        <div class="form-group">
+          <label for="totalLibraryComputers">Total Number of Computers in the Library</label>
+          <input type="text" id="totalLibraryComputers" placeholder="Enter total number of computers in the library"
+            required>
+        </div>
+        <a href="#" id="next2" class="btn btn-primary btn-user btn-block">Next</a>
+        <hr>
+      </div>
+
+      <div id="section3" style="display: none;">
+
+        <div class="form-group">
+          <label for="studentLabComputers">Total Number of Computers for Student Use in Labs</label>
+          <input type="text" id="studentLabComputers"
+            placeholder="Enter total number of computers for student use in labs" required>
+        </div>
+
+        <div class="form-group">
+          <label for="academicStaffComputers">Total Number of Computers for Academic Staff Use</label>
+          <input type="text" id="academicStaffComputers"
+            placeholder="Enter total number of computers for academic staff use" required>
+        </div>
+
+        <div class="form-group">
+          <label for="adminComputers">Total Number of Computers for Administration</label>
+          <input type="text" id="adminComputers" placeholder="Enter total number of computers for administration"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="librarySearchPrograms">What Programs are Used to Search for and Retrieve Materials in the
+            Library?</label>
+          <input type="text" id="librarySearchPrograms" placeholder="Enter library search programs" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cataloguingSystem">Give Details of the Cataloguing System Used in the Library, Including If It Is
+            Computerized</label>
+          <input type="text" id="cataloguingSystem" placeholder="Enter details of the cataloguing system" required>
+        </div>
+
+        <div class="form-group">
+          <label for="internetAccess">Please Give Details of the Internet Access Available for Staff and
+            Students</label>
+          <input type="text" id="internetAccess" placeholder="Enter details of internet access" required>
+        </div>
+
+        <div class="form-group">
+          <label for="libraryChairs">State the Number of Chairs in the Library</label>
+          <input type="text" id="libraryChairs" placeholder="Enter number of chairs in the library" required>
+        </div>
+
+        <div class="form-group">
+          <label for="femaleStudentAccommodation">What Residential Accommodation for Students Is Provided (Female
+            Students)</label>
+          <input type="text" id="femaleStudentAccommodation"
+            placeholder="Enter residential accommodation for female students" required>
+        </div>
+
+        <div class="form-group">
+          <label for="maleStudentAccommodation">What Residential Accommodation for Students Is Provided (Male
+            Students)</label>
+          <input type="text" id="maleStudentAccommodation"
+            placeholder="Enter residential accommodation for male students" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fullTimeAcademicStaff">Upload Full-Time Academic Staff</label>
+          <input type="file" id="fullTimeAcademicStaff" required>
+        </div>
+
+        <div class="form-group">
+          <label for="teachingStaff">Upload Teaching-Only Staff</label>
+          <input type="file" id="teachingStaff" required>
+        </div>
+
+        <div class="form-group">
+          <label for="infrastructureDetails">Infrastructure Details</label>
+          <textarea id="infrastructureDetails" placeholder="Enter infrastructure details" required></textarea>
+        </div>
+        <a href="#" id="next3" class="btn btn-primary btn-user btn-block">Next</a>
+        <hr>
+      </div>
+
+      <div id="section4" style="display: none;">
+        <div class="form-group">
+          <label for="boardRegulations">Board Regulations</label>
+          <textarea id="boardRegulations" placeholder="Enter board regulations" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="assetsRegister">Assets Register</label>
+          <input type="file" id="assetsRegister" required>
+        </div>
+
+        <div class="form-group">
+          <label for="riskManagementPolicy">Risk Management Policy</label>
+          <input type="file" id="riskManagementPolicy" required>
+        </div>
+
+        <div class="form-group">
+          <label for="academicStaffNumbers">Academic Staff Numbers</label>
+          <textarea id="academicStaffNumbers" placeholder="Enter academic staff numbers" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tutorialStaffNumbers">Tutorial Staff Numbers</label>
+          <textarea id="tutorialStaffNumbers" placeholder="Enter tutorial staff numbers" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="labTechniciansNumbers">Lab Technicians Numbers</label>
+          <textarea id="labTechniciansNumbers" placeholder="Enter lab technicians numbers" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="adminSupportStaff">Admin Support Staff</label>
+          <textarea id="adminSupportStaff" placeholder="Enter admin support staff" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="financialManagementSpec">Financial Management Specification</label>
+          <textarea id="financialManagementSpec" placeholder="Enter financial management specification"
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="financialReports">Financial Reports</label>
+          <input type="file" id="financialReports" required>
+        </div>
+
+        <div class="form-group">
+          <label for="businessPlan">Business Plan</label>
+          <input type="file" id="businessPlan" required>
+        </div>
+        <a href="#" id="next4" class="btn btn-primary btn-user btn-block">Next</a>
+        <hr>
+      </div>
+
+      <div id="section5" style="display: none;">
+
+        <div class="form-group">
+          <label for="securityGuarantee">Security Guarantee Documents</label>
+          <input type="file" id="securityGuarantee" required>
+        </div>
+
+        <div class="form-group">
+          <label for="companyRegistration">Company Registration Documents</label>
+          <input type="file" id="companyRegistration" required>
+        </div>
+
+        <div class="form-group">
+          <label for="businessRegistration">Business Registration Certificates</label>
+          <input type="file" id="businessRegistration" required>
+        </div>
+
+        <div class="form-group">
+          <label for="occupationalHealthSafety">Occupational Health Safety Compliance</label>
+          <input type="file" id="occupationalHealthSafety" required>
+        </div>
+
+        <div class="form-group">
+          <label for="selfAssessments">Self Assessments</label>
+          <input type="file" id="selfAssessments" required>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalInfo">Additional Information</label>
+          <textarea id="additionalInfo" placeholder="Enter additional information" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="otherProviders">Agreements with Other Providers</label>
+          <input type="file" id="otherProviders" required>
+        </div>
+
+        <div class="form-group">
+          <label for="boardMembers">Board Members</label>
+          <input type="text" id="boardMembers" placeholder="Enter board members" required>
+        </div>
+
+        <div class="form-group">
+          <label for="financialViability">Financial Viability Evidence</label>
+          <input type="file" id="financialViability" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nonProfitStatus">Non-Profit Status</label>
+          <input type="checkbox" id="nonProfitStatus">
+        </div>
+        <a href="#" id="next5" class="btn btn-primary btn-user btn-block">Next</a>
+        <hr>
+      </div>
+
+      <div id="section6" style="display: none;">
+
+        <div class="form-group">
+          <label for="auditors">Auditors Name</label>
+          <input type="text" id="auditors" placeholder="Enter auditors name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mission">Mission</label>
+          <textarea id="mission" placeholder="Enter mission" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="objectives">Objectives</label>
+          <textarea id="objectives" placeholder="Enter objectives" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="strategicPlan">Strategic Plan</label>
+          <textarea id="strategicPlan" placeholder="Enter strategic plan" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="operationalPlan">Operational Plan</label>
+          <textarea id="operationalPlan" placeholder="Enter operational plan" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="orgStructure">Organization Structure</label>
+          <textarea id="orgStructure" placeholder="Enter organization structure" required></textarea>
+        </div>
+        <button type="submit" id="nextPrevButton" class="btn btn-primary btn-user btn-block">Submit</button>
+
+        <hr>
+      </div>
+      <!-- Back to Top -->
+      <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+          class="bi bi-arrow-up"></i></a>
+    </form>
+
+    <script src="script.js"></script>
+
+    <script>
+      // Get references to the form sections
+      const section1 = document.getElementById('section1');
+      const section2 = document.getElementById('section2');
+      const section3 = document.getElementById('section3');
+      const section4 = document.getElementById('section4');
+      const section5 = document.getElementById('section5');
+      const section6 = document.getElementById('section6');
+
+      // Get references to the next and previous buttons
+      const next1Button = document.getElementById('next1');
+      const prev2Button = document.getElementById('prev2');
+      const next2Button = document.getElementById('next2');
+      const prev3Button = document.getElementById('prev3');
+      const next3Button = document.getElementById('next3');
+      const prev4Button = document.getElementById('prev4');
+      const next4Button = document.getElementById('next4');
+      const prev5Button = document.getElementById('prev5');
+      const next5Button = document.getElementById('next5');
+      const prev6Button = document.getElementById('prev6');
+      const submitButton = document.getElementById('submit');
+
+      // Add click event listeners to the next buttons
+      next1Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section1.style.display = 'none';
+        section2.style.display = 'block';
+      });
+
+      next2Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section2.style.display = 'none';
+        section3.style.display = 'block';
+      });
+
+      next3Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section3.style.display = 'none';
+        section4.style.display = 'block';
+      });
+
+      next4Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section4.style.display = 'none';
+        section5.style.display = 'block';
+      });
+
+      next5Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section5.style.display = 'none';
+        section6.style.display = 'block';
+      });
+
+      // Add click event listeners to the previous buttons
+      prev2Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section2.style.display = 'none';
+        section1.style.display = 'block';
+      });
+
+      prev3Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section3.style.display = 'none';
+        section2.style.display = 'block';
+      });
+
+      prev4Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section4.style.display = 'none';
+        section3.style.display = 'block';
+      });
+
+      prev5Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section5.style.display = 'none';
+        section4.style.display = 'block';
+      });
+
+      prev6Button.addEventListener('click', function (e) {
+        e.preventDefault();
+        section6.style.display = 'none';
+        section5.style.display = 'block';
+      });
+
+      // Add submit event listener to the form
+      const form = document.querySelector('.user');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Handle form submission here
+        // You can access form field values using the following code:
+        // const username = document.getElementById('username').value;
+        // const password = document.getElementById('password').value;
+        // const email = document.getElementById('exampleInputEmail').value;
+        // ...
+        // Perform any necessary validation and submit the form data
+      });
+
+      // Example: Submit the form when the last section's submit button is clicked
+      submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        form.submit();
+      });
+
+    </script>
+  </div>
+  </div>
+  <!-- Dashboard End -->
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Application Progress Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* Main container */
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            padding: 20px;
+            border-radius: 5px;
+
+            overflow-y: auto;
+            /* Added to enable vertical scrolling */
+        }
+
+        /* Left sidebar */
+        .sidebar {
+            flex: 0 0 300px;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        /* Sidebar heading */
+        .sidebar h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Sidebar links */
+        .sidebar a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        /* Form container */
+        .form-container {
+            margin-top: 20px;
+            background-color: #f0f8ff;
+            /* Light Blue background color */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Custom styles for the project title */
+        .project-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tracking Form */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form.tracking-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form.tracking-form label {
+            margin-bottom: 10px;
+        }
+
+        form.tracking-form input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        form.tracking-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form.tracking-form button:hover {
+            background-color: #45a049;
+        }
+
+        #progressContainer {
+            margin-top: 20px;
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        #progressContainer p {
+            margin: 0;
+        }
+
+        /* Your existing styles here */
+
+        /* Your existing styles here */
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            /* Changed from 'absolute' to 'fixed' */
+            left: 0;
+            bottom: 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 aut;
+
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dashboard Start -->
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <h3>Dashboard</h3>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-user"></i> Profile</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+            <button class="dashboard-button">Create New</button>
+
+            <!-- Example Form -->
+            <div class="form-container">
+                <form class="dashboard-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tracking Form -->
+        <div class="container">
+            <h1 class="project-title">Track the Progress of Your Application</h1>
+            <hr>
+            <form id="trackingForm" class="tracking-form">
+                <label class="project-title" for="schoolCode">School Code:</label>
+                <input type="text" id="schoolCode" name="schoolCode" required>
+                <button type="submit">Track Progress</button>
+            </form>
+
+            <div id="progressContainer" class="progress-container">
+                <!-- Progress information will be displayed here -->
+            </div>
+
+            <!-- Back to Top -->
+            <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+                    class="bi bi-arrow-up"></i></a>
+        </div>
+
+        <script src="script.js"></script> <!-- Add the JavaScript file -->
+        <script>
+            document.getElementById('trackingForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const schoolCode = document.getElementById('schoolCode').value;
+                const progressData = getProgressData(schoolCode);
+
+                if (progressData) {
+                    displayProgress(progressData);
+                } else {
+                    alert('School code not found. Please enter a valid school code.');
+                }
+            });
+
+            function getProgressData(schoolCode) {
+                // In a real application, you would fetch this data from the server or database.
+                // For demonstration purposes, we'll use a hardcoded object to represent the progress data.
+                const progressData = {
+                    'school123': {
+                        schoolName: 'Example School 1',
+                        status: 'In Progress',
+                        stage: 'Document Verification',
+                        additionalInfo: 'Your documents are currently being verified.'
+                    },
+                    'school456': {
+                        schoolName: 'Example School 2',
+                        status: 'Completed',
+                        stage: 'Final Review',
+                        additionalInfo: 'Congratulations! Your application has been successfully processed.'
+                    },
+                    // Add more school codes and progress data as needed.
+                };
+
+                return progressData[schoolCode] || null;
+            }
+
+            function displayProgress(progressData) {
+                const progressContainer = document.getElementById('progressContainer');
+                progressContainer.innerHTML = `
+                    <p><strong>School Name:</strong> ${progressData.schoolName}</p>
+                    <p><strong>Status:</strong> ${progressData.status}</p>
+                    <p><strong>Stage:</strong> ${progressData.stage}</p>
+                    <p><strong>Additional Information:</strong> ${progressData.additionalInfo}</p>
+                `;
+                progressContainer.style.display = 'block';
+            }
+
+        </script>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2023 Your Company. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+</body>
+
+</html>
