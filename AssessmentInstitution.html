@@ -211,52 +211,51 @@
       background-color: #0056b3;
     }
 
-     /* Your existing styles here */
+    /* Your existing styles here */
 
-        /* Footer styles */
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            position: fixed;
-            /* Changed from 'absolute' to 'fixed' */
-            left: 0;
-            bottom: 0;
-        }
+    /* Footer styles */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      position: fixed;
+      /* Changed from 'absolute' to 'fixed' */
+      left: 0;
+      bottom: 0;
+    }
 
-        .footer-content {
-            max-width: 600px;
-            margin: 0 aut;
+    .footer-content {
+      max-width: 600px;
+      margin: 0 aut;
 
-        }
+    }
 
-        .footer p {
-            margin: 0;
-            font-size: 14px;
-        }
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+    }
 
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-        }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
 
-        .footer-links li {
-            display: inline-block;
-            margin-right: 15px;
-        }
+    .footer-links li {
+      display: inline-block;
+      margin-right: 15px;
+    }
 
-        .footer-links li a {
-            color: #fff;
-            text-decoration: none;
-        }
+    .footer-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-        .footer-links li a:hover {
-            text-decoration: underline;
-        }
-
+    .footer-links li a:hover {
+      text-decoration: underline;
+    }
   </style>
 
 
@@ -289,17 +288,17 @@
           <label for="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
 
-          <button type="submit">Submit</button>
+          <button type="button">Submit</button>
         </form>
       </div>
     </div>
 
-    <form id="assessmentForm" class="form">
+    <form id="myForm" class="form" method="POST">
       <!-- Existing form fields -->
       <div id="section1">
         <div class="form-group">
           <label for="sizeOfLand">Institution Id</label>
-          <input type="text" id="sizeOfLand" placeholder="Enter Institution ID" required>
+          <input type="text" id="InstitutionId" placeholder="Enter Institution ID" required>
         </div>
 
         <div class="form-group">
@@ -350,7 +349,6 @@
         <hr>
       </div>
 
-
       <div id="section2" style="display: none;">
         <div class="form-group">
           <label for="studentWelfareOffices">Student Welfare Offices</label>
@@ -379,7 +377,7 @@
         </div>
 
         <div class="form-group">
-          <label for="femaleStudentArea">Number Total Area in Square Metres and Number of Bed Spaces (Female
+          <label for="maleStudentArea">Number Total Area in Square Metres and Number of Bed Spaces (Female
             Students)</label>
           <input type="text" id="femaleStudentArea" placeholder="Enter number and size of female student area" required>
         </div>
@@ -495,7 +493,7 @@
         </div>
 
         <div class="form-group">
-          <label for="riskManagementPolicy">Risk Management Policy</label>
+          <label for="riskManagementPolicy">Upload Risk Management Policy</label>
           <input type="file" id="riskManagementPolicy" required>
         </div>
 
@@ -505,7 +503,7 @@
         </div>
 
         <div class="form-group">
-          <label for="tutorialStaffNumbers">Tutorial Staff Numbers</label>
+          <label for="tutorialStaffNumbers">Tutol Staff Numbers</label>
           <textarea id="tutorialStaffNumbers" placeholder="Enter tutorial staff numbers" required></textarea>
         </div>
 
@@ -541,17 +539,17 @@
       <div id="section5" style="display: none;">
 
         <div class="form-group">
-          <label for="securityGuarantee">Security Guarantee Documents</label>
+          <label for="securityGuarantee">Upload Security Guarantee Documents</label>
           <input type="file" id="securityGuarantee" required>
         </div>
 
         <div class="form-group">
-          <label for="companyRegistration">Company Registration Documents</label>
+          <label for="companyRegistration">Upload Company Registration Documents</label>
           <input type="file" id="companyRegistration" required>
         </div>
 
         <div class="form-group">
-          <label for="businessRegistration">Business Registration Certificates</label>
+          <label for="businessRegistration">Upload Business Registration Certificates</label>
           <input type="file" id="businessRegistration" required>
         </div>
 
@@ -624,7 +622,7 @@
           <label for="orgStructure">Organization Structure</label>
           <textarea id="orgStructure" placeholder="Enter organization structure" required></textarea>
         </div>
-        <button type="submit" id="nextPrevButton" class="btn btn-primary btn-user btn-block">Submit</button>
+        <button type="submit" id="nextPrevButton" class="btn btn-primary btn-user btn-block" onclick="showdata(event)">Submit</button>
 
         <hr>
       </div>
@@ -688,72 +686,196 @@
         section6.style.display = 'block';
       });
 
-      // Add click event listeners to the previous buttons
-      prev2Button.addEventListener('click', function (e) {
-        e.preventDefault();
-        section2.style.display = 'none';
-        section1.style.display = 'block';
-      });
+      // // Add click event listeners to the previous buttons
+      // prev2Button.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   section2.style.display = 'none';
+      //   section1.style.display = 'block';
+      // });
 
-      prev3Button.addEventListener('click', function (e) {
-        e.preventDefault();
-        section3.style.display = 'none';
-        section2.style.display = 'block';
-      });
+      // prev3Button.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   section3.style.display = 'none';
+      //   section2.style.display = 'block';
+      // });
 
-      prev4Button.addEventListener('click', function (e) {
-        e.preventDefault();
-        section4.style.display = 'none';
-        section3.style.display = 'block';
-      });
+      // prev4Button.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   section4.style.display = 'none';
+      //   section3.style.display = 'block';
+      // });
 
-      prev5Button.addEventListener('click', function (e) {
-        e.preventDefault();
-        section5.style.display = 'none';
-        section4.style.display = 'block';
-      });
+      // prev5Button.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   section5.style.display = 'none';
+      //   section4.style.display = 'block';
+      // });
 
-      prev6Button.addEventListener('click', function (e) {
-        e.preventDefault();
-        section6.style.display = 'none';
-        section5.style.display = 'block';
-      });
+      // prev6Button.addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   section6.style.display = 'none';
+      //   section5.style.display = 'block';
+      // });
 
-      // Add submit event listener to the form
-      const form = document.querySelector('.user');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Handle form submission here
-        // You can access form field values using the following code:
-        // const username = document.getElementById('username').value;
-        // const password = document.getElementById('password').value;
-        // const email = document.getElementById('exampleInputEmail').value;
-        // ...
-        // Perform any necessary validation and submit the form data
-      });
 
-      // Example: Submit the form when the last section's submit button is clicked
-      submitButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        form.submit();
-      });
+    </script>
+    <script>
 
+      async function showdata(event) {
+        event.preventDefault(); // prevent the form from submitting normally
+        var InstitutionId = document.getElementById('InstitutionId').value;
+        var sizeOfLand = document.getElementById('sizeOfLand').value
+        var date = document.getElementById('date').value
+        var classroomsize = document.getElementById('classrooms').value;
+        var librarySize = document.getElementById('library').files;
+        var computerLabsNo = document.getElementById('computerLabs').value;
+        var landTitle = document.getElementById('landTitle').file;
+        var administrationBloc = document.getElementById('administrationBloc').value;
+        var adminOffices = document.getElementById('adminOffices').value;
+        var academicOffices = document.getElementById('academicOffices').value;
+        var studentWelfareOffices = document.getElementById('studentWelfareOffices').value;
+        var healthClinic = document.getElementById('healthClinic').value;
+        var studentCanteen = document.getElementById('studentCanteen').value;
+        var studentHostels = document.getElementById('studentHostels').value
+        var NumberTotalAreanSquareMetresandNumberoBedSpacesforMale = document.getElementById('maleStudentArea').value
+        var umberTotalAreanSquareMetresandNumberoBedSpacesforMfemale = document.getElementById('femaleStudentArea').value;
+        var masterPlan = document.getElementById('masterPlan').files;
+        var institutionVehicles = document.getElementById('institutionVehicles').value;
+        var libraryBooks = document.getElementById('libraryBooks').files;
+        var totalLibraryComputers = document.getElementById('totalLibraryComputers').value;
+        var studentLabComputers = document.getElementById('studentLabComputers').value;
+        var academicStaffComputers = document.getElementById('academicStaffComputers').value;
+        var TotaladminComputers = document.getElementById('adminComputers').value;
+        var librarySearchPrograms = document.getElementById('librarySearchPrograms').value;
+
+        var cataloguingSystem = document.getElementById('cataloguingSystem').value;
+        var internetAccess = document.getElementById('internetAccess').value
+        var libraryChairsNo = document.getElementById('libraryChairs').value
+        var femaleStudentAccommodation = document.getElementById('femaleStudentAccommodation').value;
+        var maleStudentAccommodation = document.getElementById('maleStudentAccommodation').value;
+        var fullTimeAcademicStaff = document.getElementById('fullTimeAcademicStaff').files;
+        var teachingStaff = document.getElementById('teachingStaff').files;
+        var infrastructureDetails = document.getElementById('infrastructureDetails').value;
+        var boardRegulations = document.getElementById('boardRegulations').value;
+        var assetsRegister = document.getElementById('assetsRegister').files;
+        var riskManagementPolicy = document.getElementById('riskManagementPolicy').files;
+        var labTechniciansNumbers = document.getElementById('labTechniciansNumbers').value;
+        var adminSupportStaff = document.getElementById('adminSupportStaff').value;
+        var financialManagementSpec = document.getElementById('financialManagementSpec').value
+        var financialReports = document.getElementById('financialReports').value
+        var businessPlan = document.getElementById('businessPlan').files;
+        var securityGuarantee = document.getElementById('securityGuarantee').files;
+        var companyRegistration = document.getElementById('companyRegistration').files;
+        var businessRegistration = document.getElementById('businessRegistration').files;
+        var occupationalHealthSafety = document.getElementById('occupationalHealthSafety').files;
+        var selfAssessments = document.getElementById('selfAssessments').files;
+        var otherProviders = document.getElementById('otherProviders').files;
+        var boardMembers = document.getElementById('boardMembers').value;
+        var financialViability = document.getElementById('financialViability').files;
+        var nonProfitStatus = document.getElementById('nonProfitStatus').value;
+        var auditors = document.getElementById('auditors').value
+        var mission = document.getElementById('mission').value
+        var objectives = document.getElementById('objectives').value;
+        var strategicPlan = document.getElementById('strategicPlan').value;
+        var operationalPlan = document.getElementById('operationalPlan').value;
+        var orgStructure = document.getElementById('orgStructure').value;
+
+        try {
+          const response = await fetch("http://127.0.0.1:8000/assessment-institutions/", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(
+              {
+                size_of_land_owned: "",
+                date: null,
+                Classrooms_number_and_size: "",
+                Library_number_and_size: "",
+                ComputerLaboratories_number_and_size: "",
+                attachacopyofthelandtitle: null,
+                Administration_bloc: "",
+                Offices_for_administration_staff: "",
+                Offices_for_academic_staff: "",
+                Student_welfare_offices: "",
+                Healthclinic_area: "",
+                Studentcanteen: "",
+                Student_hostels: "",
+                number_total_area_in_square_metres_and_number_of_bed_spaces_Male_students: "",
+                number_total_area_in_square_metres_and_number_of_bed_spaces_FemaleStudents: "",
+                Provide_amaster_plan_of_your_campus: "",
+                vehicles_institution_own_has: "",
+                upoad_library_books_by_subject: null,
+                library_books_by_subject_file: null,
+                Total_number_of_computers_in_the_library: "",
+                Totalnumberofcomputersforstudentuseinlabs: "",
+                Totalnumberofcomputersforacademicstaffuse: "",
+                Totalnumberofcomputersforadministration: "",
+                Whatprogrammesareusedtosearchforandretrievematerialsinthelibrary: "",
+                Givedetailsofthecataloguingsystemusedinthelibraryincludingifitiscomputerized: "",
+                Pleasegivedetailsoftheinternetaccessavailableforstaffandstudents: "",
+                Statethenumberofchairsinthelibrary: "",
+                Whatresidentialaccommodationforstudentsisprovided_FemaleStudents: "",
+                Whatresidentialaccommodationforstudentsisprovided_MaleStudent: "",
+                upload_full_time_academic_staff: null,
+                upload_eaching_ONLY_staff: null,
+                infrastructure_details: "",
+                board_regulations: "",
+                assets_register: null,
+                risk_management_policy: null,
+                academic_staff_numbers: "",
+                tutorial_staff_numbers: "",
+                lab_technicians_numbers: "",
+                admin_support_staff: "",
+                financial_management_specification: "",
+                financial_reports: null,
+                business_plan: null,
+                security_guarantee_documents: null,
+                company_registration_documents: null,
+                business_registration_certificates: null,
+                occupational_health_safety_compliance: null,
+                self_assessments: null,
+                additional_information: "",
+                agreements_with_other_providers: null,
+                board_members: "",
+                financial_viability_evidence: null,
+                nonprofit_status: false,
+                auditors_name: "",
+                mission: "",
+                objectives: "",
+                strategic_plan: "",
+                operational_plan: "",
+                org_structure: "",
+                User: null
+
+              }
+            )           
+          });
+     
+          alert("Data inserted successfully!");
+           
+        } catch (e) {
+          alert("Data insertion failed. Please check your input.");
+         
+        }
+      }
+ 
     </script>
   </div>
   </div>
   <!-- Dashboard End -->
 
-   <!-- Footer -->
-   <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-content">
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
+      <p>&copy; 2023 Your Company. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
     </div>
-</footer>
+  </footer>
 </body>
 
 </html>

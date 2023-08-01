@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Science and Technology Standards Compliance Checkup System</title>
+  <title>Online Teacher Assessment System</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,9 +25,45 @@
 
 
   <style>
-    body {
-      background-color: #f8f9fc;
-    }
+     body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+    
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+    
+        nav li {
+            padding: 10px 20px;
+        }
+    
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
 
     .container {
       margin-top: 80px;
@@ -117,6 +153,17 @@
 </head>
 
 <body class="">
+  <header> 
+    <nav>         
+        <ul>     
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html">About Us</a></li>
+            <li><a href="home.html">Services</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="home.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
   <div class="container">
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
@@ -132,11 +179,12 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
+              <hr>
               <form class="user" id="myForm">
                 <div id="section1">
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="username" placeholder="Username">
+                      <input type="text" class="form-control form-control-user" id="username" placeholder="Student Id">
                     </div>
                     <div class="col-sm-6">
                       <input type="password" class="form-control form-control-user" id="password"
@@ -147,11 +195,11 @@
                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                       placeholder="Email Address">
                   </div>
+
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <select class="form-control form-control-user" id="Status" placeholder="Status">
-                        <option value="" selected>Select Status</option>
-
+                      <select class="form-control form-control-user" id="Status" placeholder="Select Faculty">
+                        <option value="" selected>Select Faculty</option>
 
                       </select>
                     </div>
@@ -159,65 +207,37 @@
                       <select class="form-control form-control-user" id="gender">
                         <option value="" selected>Select gender</option>
                         <option value="male">Male</option>
-
                       </select>
                     </div>
                   </div>
-                  <a href="#" id="next1" class="btn btn-primary btn-user btn-block">Next</a>
-                  <hr>
-                </div>
-                <div id="section2" style="display: none;">
+
                   <div class="form-group row">
                     <div class="col-sm-6">
                       <select class="form-control form-control-user" id="province">
-                        <option value="" selected>Choose province</option>
+                        <option value="" selected>Choose Department</option>
                         <!-- Add your options here -->
                       </select>
                     </div>
-                    <div class="col-sm-6">
-                      <select class="form-control form-control-user" id="District" placeholder="Choose district">
-                        <option value="" selected>Choose district</option>
-                        <!-- Add your options here -->
-                      </select>
-                    </div>
-                  </div>
 
-                  <div class="form-group row">
-                    <div class="form-group">
-                      <select class="form-control form-control-user" id="Sector" placeholder="Choose sector">
-                        <option value="" selected>Choose sector</option>
-                        <!-- Add your options here -->
-                      </select>
+                      <div class="col-sm-6">
+                    <select id="role" name="role">
+                      <option value="teacher">Teacher</option>
+                      <option value="student">Student</option>
+                      <option value="administrator">Administrator</option>
+                    </select>
                     </div>
-                    <div class="form-group">
-                      <select class="form-control form-control-user" id="Cell" placeholder="Choose cell">
-                        <option value="" selected>Choose cell</option>
-                        <!-- Add your options here -->
-                      </select>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="form-group">
-                      <select class="form-control form-control-user" id="Village" placeholder="Choose village">
-                        <option value="" selected>Choose village</option>
-                        <!-- Add your options here -->
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <select class="form-control form-control-user" id="Education" placeholder="Choose School">
-                        <option value="" selected>Choose School</option>
-                        <!-- Add your options here -->
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="role" placeholder="User Role">
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-user btn-block">
-                    Submit
-                  </button>
+                      <input type="date" class="form-control form-control-user" id="registration_date" placeholder="registration_date">
+                    </div>                  
+                  </div> 
+                  <a href="#" id="next1" class="btn btn-primary btn-user btn-block">Creat</a>
                   <hr>
                 </div>
+               
+               
               </form>
               <hr>
               <div class="text-center">

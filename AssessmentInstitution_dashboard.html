@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Science and Technology Standards Compliance Checkup System</title>
+  <title>Online Teacher Assessment System</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="Free HTML Templates" name="keywords">
   <meta content="Free HTML Templates" name="description">
@@ -14,8 +14,45 @@
     <style>
     /* Global styles */
     body {
-      font-family: Arial, sans-serif;
-    }
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+    
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+    
+        nav li {
+            padding: 10px 20px;
+        }
+    
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+   
 
     /* Custom styles for the services container */
     .service-container {
@@ -193,7 +230,23 @@
 </head>
 
 <body>
-  <h1 class="project-title">EduTech Compliance Hub</h1>
+
+  <header>
+        
+    <nav>
+        
+        <ul>
+          
+        
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html">About Us</a></li>
+            <li><a href="home.html">Services</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="home.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+  <h1 class="project-title">Auditing Teachers and Evaluating Their Performance</h1>
   <hr>
    <!-- Dashboard Start -->
    <div class="dashboard-container">
@@ -206,21 +259,7 @@
       <a href="#"><i class="fas fa-envelope"></i> Messages</a>
       <button class="dashboard-button">Create New</button>
 
-      <!-- Example Form -->
-      <div class="form-container">
-        <form class="dashboard-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+     
     </div>
 
 
@@ -235,92 +274,52 @@
             <div class="container-fluid py-5">
               <div class="service-container">
                 <div class="row g-5">
-
-                  <!-- Service 1 -->
+            
+                  <!-- Service 1: Teacher Assessment -->         
+                  <!-- Service 2: Teacher Evaluation -->
                   <div class="col-lg-4 col-md-6">
                     <div class="service-item bg-light text-center">
-                      <a href="AssessmentInstitution.html">
+                      <a href="evaluation.html">
                         <div class="icon-container">
-                          <i class="fas fa-book-open"></i>
+                          <i class="fas fa-user-check"></i>
                         </div>
                       </a>
-                      <h4 class="service-title">MinEduc Assessment Service</h4>
-                      <p class="service-description">Create an assessment form in collaboration with the Ministry of
-                        Education.
-                      </p>
+                      <h4 class="service-title">Teacher Evaluation</h4>
+                      <p class="service-description">Conduct evaluations to provide feedback and insights into teachers' teaching methods.</p>
                     </div>
                   </div>
-
-                  <!-- Service 2 -->
+            
+                  <!-- Service 3: Teacher Performance Tracking -->
                   <div class="col-lg-4 col-md-6">
                     <div class="service-item bg-light text-center">
-                      <a href="contact.html">
+                      <a href="performance tracking.html">
                         <div class="icon-container">
-                          <i class="fas fa-user-edit"></i>
+                          <i class="fas fa-chart-line"></i>
                         </div>
                       </a>
-                      <h4 class="service-title">Information Update Service</h4>
-                      <p class="service-description">Update your personal information using the form below.</p>
+                      <h4 class="service-title">Performance Tracking</h4>
+                      <p class="service-description">Track the progress and improvement of teachers' performance over time.</p>
                     </div>
                   </div>
-
-                  <!-- Service 3 -->
+            
+                  <!-- Service 4: Feedback and Recommendations -->
                   <div class="col-lg-4 col-md-6">
                     <div class="service-item bg-light text-center">
-                      <a href="register School.html">
+                      <a href="feedback-recommendations.html">
                         <div class="icon-container">
-                          <i class="fas fa-school"></i>
+                          <i class="fas fa-comments"></i>
                         </div>
                       </a>
-                      <h4 class="service-title">Register your school</h4>
-                      <p class="service-description">Fill out the form below to register your school.</p>
+                      <h4 class="service-title">Feedback & Recommendations</h4>
+                      <p class="service-description">Provide constructive feedback and recommendations to help teachers excel in their roles.</p>
                     </div>
                   </div>
-
-                  <!-- Service 4 -->
-                  <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center">
-                      <a href="tracking.html">
-                        <div class="icon-container">
-                          <i class="fas fa-clipboard-check"></i>
-                        </div>
-                      </a>
-                      <h4 class="service-title">Tracking Service</h4>
-                      <p class="service-description">Track the progress of your application.</p>
-                    </div>
-                  </div>
-
-                  <!-- Service 5 -->
-                  <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center">
-                      <a href="register.html">
-                        <div class="icon-container">
-                          <i class="fas fa-user-plus"></i>
-                        </div>
-                      </a>
-                      <h4 class="service-title">Create Account</h4>
-                      <p class="service-description">Use the form below to create your account.</p>
-                    </div>
-                  </div>
-
-                  <!-- Service 6 -->
-                  <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light text-center">
-                      <a href="register.html">
-                        <div class="icon-container">
-                          <i class="fas fa-user-plus"></i>
-                        </div>
-                      </a>
-                      <h4 class="service-title">Create Account</h4>
-                      <p class="service-description">Use the form below to create your account.</p>
-                    </div>
-                  </div>
-
+            
+                 
                 </div>
               </div>
             </div>
-            <!-- Services End -->
-
+            
           </div>
         </div>
         <!-- Dashboard End -->
@@ -350,18 +349,6 @@
     });
   });
 </script>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
-      <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Contact Us</a></li>
-      </ul>
-  </div>
-</footer>
 </body>
 
 

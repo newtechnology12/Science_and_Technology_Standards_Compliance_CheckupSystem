@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Science and Technology Standards Compliance Checkup System</title>
+    <title>Online Teacher Assessment System</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,9 +20,68 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+    
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+    
+        nav li {
+            padding: 10px 20px;
+        }
+    
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+   
+    </style>
+
 </head>
 
 <body id="page-top">
+
+    <header>
+        
+        <nav>
+            
+            <ul>
+              
+            
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -35,7 +94,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">REB <sup>ADM</sup></div>
+                <div class="sidebar-brand-text mx-3">Online Teacher Assessment </sup></div>
             </a>
 
             <!-- Divider -->
@@ -45,7 +104,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>REB Dashboard</span></a>
+                    <span>AUCA Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -120,7 +179,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">list Of Schools</a>
+                        <a class="collapse-item" href="login.html">list Of Assessment</a>
                         <a class="collapse-item" href="register.html">List Of Criteries</a>
                         <a class="collapse-item" href="forgot-password.html">List of School Approved</a>
                         <a class="collapse-item" href="forgot-password.html">List of School Painding</a>
@@ -227,7 +286,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <div class="small text-gray-500">December 12, 2023</div>
                                         <span class="font-weight-bold">A new monthly report is ready to download!</span>
                                     </div>
                                 </a>
@@ -238,7 +297,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        <div class="small text-gray-500">December 7, 2023</div>
                                         290.29 has been deposited into your account!
                                     </div>
                                 </a>
@@ -249,7 +308,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        <div class="small text-gray-500">December 2, 2023</div>
                                         Spending Alert: We've noticed unusually high spending for your account.
                                     </div>
                                 </a>
@@ -329,7 +388,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -366,7 +425,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">REB Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">AUCA Dashboard</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -381,8 +440,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                School Registed</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                                                Students Registed</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">2,000</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -399,8 +458,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Schools Approved</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215,000</div>
+                                                Teachers Registed</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -416,7 +475,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Not Approved
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Assessment Approved
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">

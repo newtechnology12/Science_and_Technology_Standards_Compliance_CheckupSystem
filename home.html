@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Teacher Assessment System </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* General Styles */
+
+        .login-image {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            border-radius: 10px; /* Adds rounded corners to the container */
+            height: 500px; /* Sets the height of the container to 300 pixels */
+            width: 500px; /* Sets the width of the container to 400 pixels */
+            padding: 20px; /* Adds padding inside the container */
+            background-color: #f0f0f0; /* Sets a background color for the container */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+    
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+    
+        nav li {
+            padding: 10px 20px;
+        }
+    
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+   
+        main {
+            max-width: 1146px;
+            margin: 0 auto;
+            padding: 40px;
+            width: 1146px;
+            height: 606px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            background: #FFF;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        h1, h2, h3 {
+            color: #000;
+            font-family: "Outfit", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    
+        p {
+            color: #757575;
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        section {
+            margin-bottom: 40px;
+        }
+    
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        li i {
+            font-size: 24px;
+            color: #007bff;
+            margin-right: 15px;
+        }
+    
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+    
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+     
+        .list-unstyled li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        .list-unstyled li i {
+            font-size: 24px;
+            color: #007bff;
+            margin-right: 15px;
+        }
+    
+        .feature-details {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .feature-details h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    
+        .feature-details p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        #section1 {
+    flex: 1;
+    margin-right: 30px;
+}
+
+#section2 {
+    flex: 1;
+    margin-top: 30px;
+}
+
+h6{
+    color: #000;
+
+/* outfit/Headline */
+font-family: Outfit;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.12px;
+   
+}
+
+    </style>
+    
+</head>
+
+<body>
+
+    <header> 
+        <nav>         
+            <ul>     
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+  
+       <section id="section1">
+        <h6>Online Teacher Assessment System</p>
+            <hr>
+            <h2>Key Features</h2>
+            <hr>
+            <ul class="feature-list">
+                <li>
+                    <i class="fas fa-clipboard-check"></i>
+                    <div class="feature-details">
+                        <h3>User-friendly Interface</h3>
+                        <p> Emphasize a clean and intuitive design that ensures a seamless user experience for both teachers and administrators..</h6>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-database"></i>
+                    <div class="feature-details">
+                        <h3>User Type Registration/Login</h3>
+                        <p>Allow Users to create accounts or log in to access the assessment system.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-chart-line"></i>
+                    <div class="feature-details">
+                        <h3>Automated Grading</h3>
+                        <p>mplement an automatic grading system to quickly evaluate and provide feedback on student submissions.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+
+        <section id="section2">
+            <h2>Schools Testimonials</h2>
+            <div class="testimonial-wrapper">
+                <div class="testimonial">
+                    <div class="video-wrapper">
+                        <video controls width="100%" height="auto" style="max-width: 400px;">
+                            <source src="img/Key moments at the East African Regional School Meal Coalition Network Conference in Kigali.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="video-wrapper">
+                        <video controls width="100%" height="auto" style="max-width: 400px;">
+                            <source src="img/ICT Essentials in Rwanda(1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+      
+    </main>
+
+   
+</body>
+
+</html>

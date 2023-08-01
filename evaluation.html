@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Evaluation Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            padding: 10px 20px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 1146px;
+            margin: 0 auto;
+            padding: 40px;
+            width: 1146px;
+            height: 606px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            background: #FFF;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #000;
+            font-family: "Outfit", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #000;
+
+            /* outfit/Headline */
+            font-family: Outfit;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            /* 28.8px */
+            letter-spacing: -0.12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #757575;
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        input[type="text"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html">About Us</a></li>
+                <li><a href="home.html">Services</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="home.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <div class="container">
+            <h1>Teacher Evaluation Form</h1>
+            <form action="{% url 'submit_evaluation' %}" method="post">
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="teacher">Teacher:</label>
+                        <input type="text" name="teacher" id="teacher">
+                    </div>
+                    <div class="form-group">
+                        <label for="student">Student:</label>
+                        <input type="text" name="student" id="student">
+                    </div>
+                    <div class="form-group">
+                        <label for="evaluation_date">Evaluation Date:</label>
+                        <input type="date" name="evaluation_date" id="evaluation_date">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="nextSection(1)">Next</button>
+                </fieldset>
+
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="Comes_to_class_on_time">Comes to Class on Time:</label>
+                        <select name="Comes_to_class_on_time" id="Comes_to_class_on_time">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Finisheshisherclassontime">Finishes his/her class on Time:</label>
+                        <select name="Finisheshisherclassontime" id="Finisheshisherclassontime">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
+                            Professional Appearance:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Has good
+                            level of Engli shwhich is clear andunderstandable:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Hasmasteryofthecoursethathesheteaches:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Hasmasteryofthecoursethathesheteaches">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Showsbalancebetweentheoryandpraticeofherhiscourse:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Showsbalancebetweentheoryandpraticeofherhiscourse">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givesthecoursesyllabustostudentsontime:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Givesthecoursesyllabustostudentsontime">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givesdiscussionsandexplanationsthatarerelatedtothecoursecontents:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Givesdiscussionsandexplanationsthatarerelatedtothecoursecontents">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next</button>
+                    <button type="button" class="btn btn-secondary" onclick="prevSection(1)">Previous</button>
+
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Makesconnectionsofdifferentinformationthatisrelatedtothecontentsofthecourse:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Makesconnectionsofdifferentinformationthatisrelatedtothecontentsofthecourse">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">iswellorganisedintheclassmanagement:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="iswellorganisedintheclassmanagement">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Usesillustration_visual_aids_stories_lifeexample_to_make_thelessonclear:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Usesillustration_visual_aids_stories_lifeexample_to_make_thelessonclear">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Develops and
+                            sequences good instruction activities and materials for student learning through fairness
+                            confidence solidarity and respect:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Developsandsequencesgoodinstructionactivitiesandmaterialsforstudentlearningthroughfairnessconfidencesolidarityandrespect">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
+                            Professional Appearance:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">EncouragesStudentstothinkforthemselves:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="EncouragesStudentstothinkforthemselves">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Encouragesstudentparticipationinclass:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Encouragesstudentparticipationinclass">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givespositiveandconstructivecritisismtostudents:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Givespositiveandconstructivecritisismtostudents">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next</button>
+                    <button type="button" class="btn btn-secondary" onclick="prevSection(1)">Previous</button>
+
+                </fieldset>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
+                            Professional Appearance:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Iswillingtoadmithisherlimitationsormistakesduringhisherteaching:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Iswillingtoadmithisherlimitationsormistakesduringhisherteaching">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Ispatientkindandfriendlytostudentsandotherteachers:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Ispatientkindandfriendlytostudentsandotherteachers">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Encouragesthedevelopmentofcreativeandcriticalthinking:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Encouragesthedevelopmentofcreativeandcriticalthinking">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Involvesandguidesallstudentsinassertingtheirownlearning:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Involvesandguidesallstudentsinassertingtheirownlearning">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Allowstudentstoseeexaminationspapersassignmentsandotherprojects:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Allowstudentstoseeexaminationspapersassignmentsandotherprojects">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">takesenoughquizzesandassignmentstothestudent:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="takesenoughquizzesandassignmentstothestudent">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Isreliableinthewayheshegradesstudents:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Isreliableinthewayheshegradesstudents">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Presents_his_her_lessoninlivelyinterestingandclearmanner:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Presents_his_her_lessoninlivelyinterestingandclearmanner">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">DemonstratesalifestyleconsistentwithAUCA_sphilosophy:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="DemonstratesalifestyleconsistentwithAUCA_sphilosophy">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Promotes_christian_values_wherever_he_she_goes:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Promotes_christian_values_wherever_he_she_goes">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Promotes_Spiritual_Activities_offered_by_AUCA:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Promotes_Spiritual_Activities_offered_by_AUCA">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Communicates_the_learning_objective_to_students:</label>
+                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
+                            id="Communicates_the_learning_objective_to_students">
+                            <option value="">Select rating</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Adequats">Adequats</option>
+                            <option value="Poor">Poor</option>
+                            <option value="VeryPoor">Very Poor</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                    <button type="button" class="btn btn-secondary" onclick="prevSection(2)">Previous</button>
+
+                </fieldset>
+
+
+                <!-- <button type="submit">Submit</button> -->
+            </form>
+            
+        </div>
+         <!-- Back to Top -->
+         <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+            class="bi bi-arrow-up"></i></a>
+
+        <script>
+            let currentSection = 1;
+            const formSections = document.querySelectorAll('form fieldset');
+
+            function showSection(sectionIndex) {
+                formSections.forEach((section, index) => {
+                    section.style.display = index + 1 === sectionIndex ? 'block' : 'none';
+                });
+            }
+
+            function nextSection() {
+                const nextIndex = currentSection + 1;
+                // Do any necessary form validation before proceeding to the next section
+                // ...
+
+                currentSection = nextIndex;
+                showSection(currentSection);
+            }
+
+            function prevSection() {
+                const prevIndex = currentSection - 1;
+                currentSection = prevIndex;
+                showSection(currentSection);
+            }
+
+            function submitForm() {
+                // Submit the form
+                document.querySelector('form').submit();
+            }
+
+            // Show the initial section
+            showSection(currentSection);
+        </script>
+
+</body>
+
+</html>
