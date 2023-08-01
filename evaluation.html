@@ -127,6 +127,7 @@
             line-height: normal;
         }
 
+
         input[type="text"],
         select,
         input[type="date"] {
@@ -171,6 +172,35 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .rating-value {
+            font-size: 20px;
+            font-weight: bold;
+            padding-right: 10px;
+        }
+
+        /* h1 {
+    text-align: center;
+    margin-bottom: 20px;
+} */
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.rating-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
     </style>
 </head>
 
@@ -180,10 +210,8 @@
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="home.html">About Us</a></li>
-                <li><a href="home.html">Services</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="home.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -192,16 +220,55 @@
     <main>
 
         <div class="container">
-            <h1>Teacher Evaluation Form</h1>
+            <h1>Welcome to Teacher Evaluation</h1>
+            <p>Thank you for helping us evaluate our teachers. Please provide your ratings based on the following criteria:</p>
+    
+            <table class="rating-table">
+                <tr>
+                    <td>Rating</td>
+                    <td>Criteria</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Adequate</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Poor</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Very Poor</td>
+                </tr>
+            </table>
             <form action="{% url 'submit_evaluation' %}" method="post">
                 <fieldset>
+                    <div class="form-group">
+                        <label for="Comes_to_class_on_time">Course</label>
+                        <select name="Comes_to_class_on_time" class="rating-select">
+                            <option value="">Select rating</option>
+                            <option value="5">Networking</option>
+                            <option value="4">WebTechnology</option>
+                            <option value="3">Software Engineering</option>
+                           
+                        </select>
+                        <div class="rating-value"></div>
+                    </div>
 
                     <div class="form-group">
-                        <label for="teacher">Teacher:</label>
+                        <label for="teacher">Teacher Names:</label>
                         <input type="text" name="teacher" id="teacher">
                     </div>
                     <div class="form-group">
-                        <label for="student">Student:</label>
+                        <label for="student">Student Id:</label>
                         <input type="text" name="student" id="student">
                     </div>
                     <div class="form-group">
@@ -214,106 +281,109 @@
                 <fieldset>
 
                     <div class="form-group">
-                        <label for="Comes_to_class_on_time">Comes to Class on Time:</label>
-                        <select name="Comes_to_class_on_time" id="Comes_to_class_on_time">
+                        <label for="Comes_to_class_on_time">Comes to Class on Time: 5-4-3-2-1</label>
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
+
 
                     <div class="form-group">
                         <label for="Finisheshisherclassontime">Finishes his/her class on Time:</label>
-                        <select name="Finisheshisherclassontime" id="Finisheshisherclassontime">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
                             Professional Appearance:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Has good
                             level of Engli shwhich is clear andunderstandable:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Hasmasteryofthecoursethathesheteaches:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Hasmasteryofthecoursethathesheteaches">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Showsbalancebetweentheoryandpraticeofherhiscourse:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Showsbalancebetweentheoryandpraticeofherhiscourse">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givesthecoursesyllabustostudentsontime:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Givesthecoursesyllabustostudentsontime">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givesdiscussionsandexplanationsthatarerelatedtothecoursecontents:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Givesdiscussionsandexplanationsthatarerelatedtothecoursecontents">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next</button>
                     <button type="button" class="btn btn-secondary" onclick="prevSection(1)">Previous</button>
@@ -324,107 +394,104 @@
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Makesconnectionsofdifferentinformationthatisrelatedtothecontentsofthecourse:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Makesconnectionsofdifferentinformationthatisrelatedtothecontentsofthecourse">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">iswellorganisedintheclassmanagement:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="iswellorganisedintheclassmanagement">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Usesillustration_visual_aids_stories_lifeexample_to_make_thelessonclear:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Usesillustration_visual_aids_stories_lifeexample_to_make_thelessonclear">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
-                        <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Develops and
-                            sequences good instruction activities and materials for student learning through fairness
-                            confidence solidarity and respect:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Developsandsequencesgoodinstructionactivitiesandmaterialsforstudentlearningthroughfairnessconfidencesolidarityandrespect">
+                        <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
                             <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Good</option>
+                            <option value="3">Adequats</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Very Poor</option>
                         </select>
+                        <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
                             Professional Appearance:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">EncouragesStudentstothinkforthemselves:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="EncouragesStudentstothinkforthemselves">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Encouragesstudentparticipationinclass:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Encouragesstudentparticipationinclass">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Givespositiveandconstructivecritisismtostudents:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Givespositiveandconstructivecritisismtostudents">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next</button>
                     <button type="button" class="btn btn-secondary" onclick="prevSection(1)">Previous</button>
@@ -434,172 +501,172 @@
                     <div class="form-group">
                         <label for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Maintains a
                             Professional Appearance:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Iswillingtoadmithisherlimitationsormistakesduringhisherteaching:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Iswillingtoadmithisherlimitationsormistakesduringhisherteaching">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Ispatientkindandfriendlytostudentsandotherteachers:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Ispatientkindandfriendlytostudentsandotherteachers">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Encouragesthedevelopmentofcreativeandcriticalthinking:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Encouragesthedevelopmentofcreativeandcriticalthinking">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Involvesandguidesallstudentsinassertingtheirownlearning:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Involvesandguidesallstudentsinassertingtheirownlearning">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Allowstudentstoseeexaminationspapersassignmentsandotherprojects:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Allowstudentstoseeexaminationspapersassignmentsandotherprojects">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">takesenoughquizzesandassignmentstothestudent:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="takesenoughquizzesandassignmentstothestudent">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Isreliableinthewayheshegradesstudents:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Isreliableinthewayheshegradesstudents">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Presents_his_her_lessoninlivelyinterestingandclearmanner:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Presents_his_her_lessoninlivelyinterestingandclearmanner">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
 
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">DemonstratesalifestyleconsistentwithAUCA_sphilosophy:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="DemonstratesalifestyleconsistentwithAUCA_sphilosophy">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Promotes_christian_values_wherever_he_she_goes:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Promotes_christian_values_wherever_he_she_goes">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Promotes_Spiritual_Activities_offered_by_AUCA:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Promotes_Spiritual_Activities_offered_by_AUCA">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <div class="form-group">
                         <label
                             for="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment">Communicates_the_learning_objective_to_students:</label>
-                        <select name="Maintainsaproffesionalappearanceappropriatetohisherteachingassignment"
-                            id="Communicates_the_learning_objective_to_students">
-                            <option value="">Select rating</option>
-                            <option value="excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Adequats">Adequats</option>
-                            <option value="Poor">Poor</option>
-                            <option value="VeryPoor">Very Poor</option>
-                        </select>
+                            <select name="Comes_to_class_on_time" class="rating-select" onchange="updateRating(this)">
+                                <option value="">Select rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Good</option>
+                                <option value="3">Adequats</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Very Poor</option>
+                            </select>
+                            <div class="rating-value"></div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
                     <button type="button" class="btn btn-secondary" onclick="prevSection(2)">Previous</button>
@@ -609,11 +676,11 @@
 
                 <!-- <button type="submit">Submit</button> -->
             </form>
-            
+
         </div>
-         <!-- Back to Top -->
-         <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
-            class="bi bi-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+                class="bi bi-arrow-up"></i></a>
 
         <script>
             let currentSection = 1;
@@ -648,6 +715,22 @@
             // Show the initial section
             showSection(currentSection);
         </script>
+        <script>
+            function updateRating(selectElement) {
+                const selectedOption = selectElement.options[selectElement.selectedIndex];
+                const ratingValueElement = selectElement.nextElementSibling;
+
+                if (selectedOption.value !== '') {
+                    ratingValueElement.innerText = selectedOption.value;
+                    ratingValueElement.style.display = 'inline-block';
+                } else {
+                    ratingValueElement.style.display = 'none';
+                }
+            }
+
+
+        </script>
+
 
 </body>
 

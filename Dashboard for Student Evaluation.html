@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Online Teacher Assessment System - Teacher Dashboard</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Free HTML Templates" name="keywords">
+  <meta content="Free HTML Templates" name="description">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Template Stylesheet -->
+  <style>
+    /* Global styles */
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+    
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+    
+        nav li {
+            padding: 10px 20px;
+        }
+    
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        p {
+            color: #757575;
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+   
+  
+    /* Dashboard Start */
+    .dashboard-container {
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .project-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    /* Login Form styles */
+    .login-form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .login-form-container h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .login-form-container label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    .login-form-container input[type="text"],
+    .login-form-container input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  
+    .login-form-container button {
+      background-color:  #173154;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+  
+    .login-form-container button:hover {
+      background-color: #173154;
+    }
+  
+    /* Evaluation History */
+    .evaluation-history {
+      margin-top: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .evaluation-history h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .evaluation-history table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .evaluation-history th,
+    .evaluation-history td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .evaluation-history th {
+      background-color: #f0f0f0;
+    }
+  
+    /* Feedback and Recommendations */
+    .feedback-container {
+      margin-top: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .feedback-container h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .feedback-container p {
+      margin-bottom: 10px;
+    }
+  
+    /* Claiming and Commenting Section */
+    .claim-comment-section {
+      margin-top: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .claim-comment-section h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .claim-comment-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    .claim-comment-section input[type="text"],
+    .claim-comment-section textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  
+    .claim-comment-section button {
+      background-color:  #173154;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+  
+    .claim-comment-section button:hover {
+      background-color:  #173154;
+    }
+  
+  </style>
+  
+</head>
+
+<body>
+
+    <header> 
+        <nav>         
+            <ul>     
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>               
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+  <h1 class="project-title">Auditing Teachers and Evaluating Their Performance</h1>
+  <hr>
+  <!-- Dashboard Start -->
+  <div class="dashboard-container">
+    <!-- Login Form -->
+    <div class="login-form-container">
+      <h3 class="project-title">Teacher Login</h3>
+      <form id="loginForm">
+        <label for="teacherId">Teacher ID:</label>
+        <input type="text" id="teacherId" name="teacherId" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+
+
+    <!-- Evaluation History -->
+    <div class="evaluation-history" style="display: none;">
+      <h3 class="project-title">Evaluation History</h3>
+      <hr>
+      <table>
+        <tr>
+          <th>Teacher Name</th>
+          <th>Class Name</th>
+          <th>Teaching Style</th>
+          <th>Communication</th>
+          <th>Feedback</th>
+        </tr>
+        <tr>
+          <td>John Doe</td>
+          <td>Mathematics</td>
+          <td>Good</td>
+          <td>Excellent</td>
+          <td>John Doe is doing great!</td>
+        </tr>
+        <!-- Add more evaluation data here -->
+      </table>
+
+       <!-- Feedback and Recommendations -->
+    <div class="feedback-container">
+        <h3 class="project-title">Feedback & Recommendations</h3>
+        <hr>
+        <p><strong>From Administration:</strong> You are doing an excellent job in the classroom. Keep up the good
+          work!</p>
+        <!-- Add more feedback and recommendations here -->
+      </div>
+    </div>
+
+     
+<!-- Claiming and Commenting Section -->
+<div class="claim-comment-section" style="display: none;">
+    <!-- Claim Help Form -->
+    <div class="claim-help-form" id="claimHelpForm">
+      <h3 class="project-title">Teacher Claim </h3>
+      <hr>
+      <form id="helpForm">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Teacher Comment Form -->
+    <div class="teacher-comment-form" id="teacherCommentForm">
+      <h3 class="project-title">Leave a Comment</h3>
+      <hr>
+      <form id="commentForm">
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  
+
+
+  <script>
+    // Your JavaScript code here
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const teacherId = document.getElementById('teacherId').value;
+      const password = document.getElementById('password').value;
+
+      // Replace this with your actual login authentication logic
+      if (teacherId === 'teacher123' && password === 'password123') {
+        document.querySelector('.evaluation-history').style.display = 'block';
+        document.querySelector('.feedback-container').style.display = 'block';
+        // Hide the login form container
+        document.querySelector('.login-form-container').style.display = 'none';
+        // Show the Claiming and Commenting Section
+        document.querySelector('.claim-comment-section').style.display = 'block';
+        
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+    });
+
+      // Claim Help Form Submission
+      document.getElementById('helpForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const message = document.getElementById('message').value;
+      // Replace this with your actual logic to handle the form submission and claiming process
+      alert(`You have claimed help. Phone Number: ${phoneNumber}, Message: ${message}`);
+      document.getElementById('helpForm').reset();
+    });
+
+    // Teacher Comment Form Submission
+    document.getElementById('commentForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const comment = document.getElementById('comment').value;
+      // Replace this with your actual logic to handle the form submission and comment process
+      alert(`Your comment has been submitted: ${comment}`);
+      document.getElementById('commentForm').reset();
+    });
+  </script>
+</body>
+
+</html>
