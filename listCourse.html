@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Course List</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            background-color: #f0fbff;
+        }
+
+        header {
+            background-color: #173154;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            padding: 10px 20px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        p {
+            color: #757575;
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center">COURSE LIST</h1>
+        <p>When you choose a department, the system will display the courses available in that specific department. If you want to see courses from all departments, select 'All Departments' from the dropdown</p>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="form-group department-selection">
+                    <label for="department">Select Department:</label>
+                    <select class="form-control" id="department">
+                        <option value="all">All Departments</option>
+                        <option value="math">Software Engineering</option>
+                        <option value="history">Networking</option>
+                        <option value="science">Info-Managment</option>
+                        <option value="english">Education</option>
+                        <!-- Add more departments here -->
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Teacher</th>
+                        <th>Department</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody id="courseList">
+                    <!-- Course items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Back to Top -->
+        <a href="AssessmentInstitution_dashboard.html" class="btn btn-secondary py-3 fs-4 back-to-top">Back<i
+            class="bi bi-arrow-up"></i></a>
+
+    </div>
+
+    <!-- Include Bootstrap JS (Optional, only if you need Bootstrap JS functionalities) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Sample course data
+        const courses = [
+            {
+                name: "Mathematics 101",
+                department: "math",
+                teacher: "Prof. Smith",
+                schedule: "Mon 10:00 AM",
+                credits: "3 credits",
+            },
+            {
+                name: "History 202",
+                department: "history",
+                teacher: "Prof. Johnson",
+                schedule: "Tue 2:00 PM",
+                credits: "3 credits",
+            },
+            {
+                name: "Science 303",
+                department: "science",
+                teacher: "Prof. Williams",
+                schedule: "Wed 9:00 AM",
+                credits: "4 credits",
+            },
+            {
+                name: "English 404",
+                department: "english",
+                teacher: "Prof. Davis",
+                schedule: "Thu 11:00 AM",
+                credits: "3 credits",
+            },
+            // Add more courses here
+        ];
+
+        // Function to create course elements
+        function createCourseElement(course) {
+            const courseElement = document.createElement("tr");
+
+            const courseInfo = `
+            <td>${course.name}</td>
+            <td>${course.teacher}</td>
+            <td>${course.schedule}</td>
+            <td>${course.credits}</td>
+        `;
+
+            courseElement.innerHTML = courseInfo;
+            courseElement.addEventListener("click", () => showCourseDetails(course));
+            return courseElement;
+        }
+
+        // Function to display course details on click
+        function showCourseDetails(course) {
+            // Replace this with your desired logic to display course details or redirect to a course page.
+            console.log("Clicked on course:", course.name);
+        }
+
+        // Function to filter courses by department and display
+        function filterCoursesByDepartment(department) {
+            const courseListContainer = document.getElementById("courseList");
+            courseListContainer.innerHTML = "";
+
+            const filteredCourses = department === "all"
+                ? courses
+                : courses.filter((course) => course.department === department);
+
+            filteredCourses.forEach((course) => {
+                const courseElement = createCourseElement(course);
+                courseListContainer.appendChild(courseElement);
+            });
+        }
+
+        // Event listener for department selection
+        document.getElementById("department").addEventListener("change", function () {
+            const selectedDepartment = this.value;
+            filterCoursesByDepartment(selectedDepartment);
+        });
+
+        // Initialize the course list on page load
+        window.onload = function () {
+            filterCoursesByDepartment("all");
+        };
+
+    </script>
+</body>
+
+</html>
